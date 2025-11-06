@@ -1,14 +1,16 @@
-// Alternar entre páginas
 function showPage(pageId) {
   const pages = ['home', 'familia', 'meu-futuro', 'amigos'];
+
   pages.forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.display = id === pageId ? 'flex' : 'none';
+    if (el) {
+      el.style.display = (id === pageId) ? 'block' : 'none';
+    }
   });
 
-  // Garantir que a seção Hero fique centralizada
-  const hero = document.getElementById('home');
+  // Garante que a seção principal continue centralizada
   if (pageId === 'home') {
+    const hero = document.getElementById('home');
     hero.style.display = 'flex';
     hero.style.justifyContent = 'center';
     hero.style.alignItems = 'center';
@@ -17,31 +19,17 @@ function showPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- ✅ Função da imagem expandida ---
+// Função de imagem expandida
 const profileImage = document.getElementById('profileImage');
 const modal = document.getElementById('imageModal');
 const expandedImg = document.getElementById('expandedImg');
 const closeModal = document.getElementById('closeModal');
 
-if (profileImage) {
-  profileImage.addEventListener('click', () => {
-    modal.style.display = "flex";
-    expandedImg.src = profileImage.src;
-  });
-}
-
-if (closeModal) {
-  closeModal.addEventListener('click', () => {
-    modal.style.display = "none";
-  });
-}
-
-if (modal) {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
-}
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") modal.style.display = "none";
+profileImage.addEventListener('click', () => {
+  modal.style.display = "flex";
+  expandedImg.src = profileImage.src;
 });
+
+closeModal.addEventListener('click', () => modal.style.display = "none");
+modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = "none"; });
+window.addEventListener('keydown', e => { if (e.key === "Escape") modal.style.display = "none"; });

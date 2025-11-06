@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo - Site Pessoal</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,15 +11,13 @@
   <!-- Cabeçalho -->
   <header id="header">
     <div class="header-content">
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu de navegação">☰</button>
-
       <nav id="nav">
         <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
         <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
         <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
       </nav>
 
-      <!-- ✅ Imagem com função de expandir -->
+      <!-- Imagem com função de expandir -->
       <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
            alt="Foto de Paulo"
            class="header-image"
@@ -29,7 +25,7 @@
     </div>
   </header>
 
-  <!-- ✅ Modal de imagem expandida -->
+  <!-- Modal da imagem expandida -->
   <div id="imageModal" class="modal">
     <span class="close" id="closeModal">&times;</span>
     <img class="modal-content" id="expandedImg" alt="Imagem ampliada">
@@ -37,10 +33,8 @@
 
   <!-- Conteúdo principal -->
   <main>
-    <!-- ✅ HERO - sempre centralizado -->
+    <!-- Página inicial -->
     <section class="hero active" id="home">
-      <div class="hero-background"></div>
-      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-name">PAULO</h1>
         <div class="decorative-line"></div>
@@ -51,40 +45,44 @@
       </div>
     </section>
 
-    <!-- Páginas -->
+    <!-- Família -->
     <section class="page" id="familia">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>FAMÍLIA</h1>
         <div class="content-area">
-          <h3>Minha Base</h3>
-          <p>A família é o alicerce da minha vida...</p>
+          <p>A família é o alicerce da minha vida, a base onde aprendi o valor do amor, da empatia e da união.</p>
         </div>
       </div>
     </section>
 
+    <!-- Meu Futuro -->
     <section class="page" id="meu-futuro">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>MEU FUTURO</h1>
         <div class="content-area">
-          <h3>Sonhos e Aspirações</h3>
-          <p>Meus planos e metas para o futuro...</p>
+          <p>O futuro que imagino é construído com dedicação, foco e paixão por aprender algo novo todos os dias.</p>
         </div>
       </div>
     </section>
 
+    <!-- Amigos -->
     <section class="page" id="amigos">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>AMIGOS</h1>
         <div class="content-area">
-          <h3>Conexões Especiais</h3>
-          <p>As pessoas especiais que fazem parte da minha vida...</p>
+          <p>Amigos são como irmãos que a vida nos permite escolher — pessoas que compartilham risadas, histórias e sonhos.</p>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ✅ Rodapé fino -->
+  <footer>
+    <p>© 2025 Paulo - Todos os direitos reservados</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
