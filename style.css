@@ -32,6 +32,7 @@ nav a {
   color: #f1f5f9;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: 500;
 }
 nav a:hover {
   color: #60a5fa;
@@ -39,8 +40,8 @@ nav a:hover {
 
 /* Imagem do perfil */
 .header-image {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #60a5fa;
@@ -51,7 +52,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Hero (inicial) */
+/* Hero */
 .hero {
   display: flex;
   justify-content: center;
@@ -61,6 +62,13 @@ nav a:hover {
   background: linear-gradient(135deg, #1e293b, #0f172a);
   text-align: center;
   padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.hero.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .hero-content {
   max-width: 800px;
@@ -71,18 +79,21 @@ nav a:hover {
   margin: 0;
 }
 .decorative-line {
-  width: 80px;
-  height: 2px; /* ✅ mais fina */
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
   margin: 1rem auto;
 }
 .hero-identity {
-  font-weight: 600;
-  color: #93c5fd;
+  font-weight: 700;
+  color: #60a5fa;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
 }
 .hero-description {
-  color: #e2e8f0;
-  font-size: 1.2rem;
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
 
 /* Páginas internas */
@@ -91,6 +102,14 @@ nav a:hover {
   padding: 8rem 2rem 4rem;
   min-height: 100vh;
   background: linear-gradient(135deg, #0f172a, #1e293b);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .page-content {
   max-width: 900px;
@@ -98,15 +117,31 @@ nav a:hover {
 }
 .page-content h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #60a5fa;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.content-area {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 1rem;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.content-area h3 {
+  font-size: 1.75rem;
+  color: #60a5fa;
+  margin: 2rem 0 1rem;
 }
 .content-area p {
   font-size: 1.2rem;
-  line-height: 1.6;
+  color: #e2e8f0;
+  line-height: 1.8;
 }
 
-/* Botão de voltar */
+/* Botão voltar */
 .back-btn {
   background: rgba(96, 165, 250, 0.1);
   color: #60a5fa;
@@ -120,7 +155,7 @@ nav a:hover {
   background: rgba(96, 165, 250, 0.2);
 }
 
-/* Modal da imagem */
+/* Modal imagem */
 .modal {
   display: none;
   position: fixed;
@@ -135,7 +170,6 @@ nav a:hover {
   max-width: 80%;
   max-height: 80%;
   border-radius: 10px;
-  transition: transform 0.3s ease;
 }
 .close {
   position: absolute;
@@ -145,27 +179,21 @@ nav a:hover {
   font-size: 40px;
   cursor: pointer;
 }
-.close:hover {
-  color: #60a5fa;
-}
+.close:hover { color: #60a5fa; }
 
-/* ✅ Rodapé */
+/* Rodapé branco fino */
 footer {
   text-align: center;
   padding: 0.5rem;
   font-size: 0.9rem;
-  color: #ffffff;
-  border-top: 1px solid #ffffff;
-  background: #0f172a;
+  color: #000;
+  background: #fff;
+  border-top: 1px solid #ddd;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .hero-name {
-    font-size: 3rem;
-  }
-  nav {
-    gap: 1rem;
-  }
+  .hero-name { font-size: 3rem; }
+  .hero-identity { font-size: 1.2rem; }
+  .content-area { padding: 2rem; }
 }
-
