@@ -7,7 +7,6 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
-  <style>@view-transition { navigation: auto; }</style>
 </head>
 
 <body>
@@ -30,7 +29,7 @@
     </div>
   </header>
 
-  <!-- Modal de imagem expandida -->
+  <!-- ✅ Modal de imagem expandida -->
   <div id="imageModal" class="modal">
     <span class="close" id="closeModal">&times;</span>
     <img class="modal-content" id="expandedImg" alt="Imagem ampliada">
@@ -38,7 +37,8 @@
 
   <!-- Conteúdo principal -->
   <main>
-    <section class="hero" id="home">
+    <!-- ✅ HERO - sempre centralizado -->
+    <section class="hero active" id="home">
       <div class="hero-background"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -51,8 +51,8 @@
       </div>
     </section>
 
-    <!-- Página Família -->
-    <section class="page" id="familia" style="display: none;">
+    <!-- Páginas -->
+    <section class="page" id="familia">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>FAMÍLIA</h1>
@@ -63,8 +63,7 @@
       </div>
     </section>
 
-    <!-- Página Meu Futuro -->
-    <section class="page" id="meu-futuro" style="display: none;">
+    <section class="page" id="meu-futuro">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>MEU FUTURO</h1>
@@ -75,8 +74,7 @@
       </div>
     </section>
 
-    <!-- Página Amigos -->
-    <section class="page" id="amigos" style="display:none;">
+    <section class="page" id="amigos">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
         <h1>AMIGOS</h1>
@@ -88,7 +86,6 @@
     </section>
   </main>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>

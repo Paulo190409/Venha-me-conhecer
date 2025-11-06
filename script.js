@@ -1,10 +1,19 @@
-// Alternar páginas
+// Alternar entre páginas
 function showPage(pageId) {
   const pages = ['home', 'familia', 'meu-futuro', 'amigos'];
   pages.forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.style.display = id === pageId ? 'block' : 'none';
+    if (el) el.style.display = id === pageId ? 'flex' : 'none';
   });
+
+  // Garantir que a seção Hero fique centralizada
+  const hero = document.getElementById('home');
+  if (pageId === 'home') {
+    hero.style.display = 'flex';
+    hero.style.justifyContent = 'center';
+    hero.style.alignItems = 'center';
+  }
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -14,27 +23,25 @@ const modal = document.getElementById('imageModal');
 const expandedImg = document.getElementById('expandedImg');
 const closeModal = document.getElementById('closeModal');
 
-// Ao clicar na imagem: abrir modal
-profileImage.addEventListener('click', () => {
-  modal.style.display = "block";
-  expandedImg.src = profileImage.src;
-});
+if (profileImage) {
+  profileImage.addEventListener('click', () => {
+    modal.style.display = "flex";
+    expandedImg.src = profileImage.src;
+  });
+}
 
-// Fechar modal ao clicar no X
-closeModal.addEventListener('click', () => {
-  modal.style.display = "none";
-});
-
-// Fechar modal ao clicar fora da imagem
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
+if (closeModal) {
+  closeModal.addEventListener('click', () => {
     modal.style.display = "none";
-  }
-});
+  });
+}
 
-// Fechar modal com tecla Esc
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+}
+
 window.addEventListener('keydown', (e) => {
-  if (e.key === "Escape") {
-    modal.style.display = "none";
-  }
+  if (e.key === "Escape") modal.style.display = "none";
 });

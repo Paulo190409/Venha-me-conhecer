@@ -1,13 +1,14 @@
-/* Estrutura geral */
+/* === Estrutura geral === */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
   background: #0f172a;
   color: #f1f5f9;
+  overflow-x: hidden;
 }
 
-/* Cabeçalho */
+/* === Cabeçalho === */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -37,7 +38,7 @@ nav a:hover {
   color: #60a5fa;
 }
 
-/* ✅ Imagem com estilo circular */
+/* === Imagem do perfil === */
 .header-image {
   width: 48px;
   height: 48px;
@@ -52,53 +53,83 @@ nav a:hover {
   border-color: #93c5fd;
 }
 
-/* Hero */
+/* === Seção Hero === */
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  text-align: center;
   background: linear-gradient(135deg, #1e293b, #0f172a);
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.hero-background, .hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
 }
 .hero-name {
   font-size: 5rem;
   font-weight: 800;
+  margin: 0;
 }
 .decorative-line {
-  width: 120px;
-  height: 4px;
+  width: 80px; /* 🔧 mais fina */
+  height: 2px;
   background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-  margin: 1.5rem auto;
+  margin: 1rem auto;
+  border-radius: 2px;
 }
 
-/* Modal de imagem expandida */
+/* === Outras páginas === */
+.page {
+  display: none;
+  padding: 8rem 2rem 4rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+.page-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Botão de voltar */
+.back-btn {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.back-btn:hover {
+  background: rgba(96, 165, 250, 0.2);
+  border-color: #60a5fa;
+}
+
+/* === Modal da imagem === */
 .modal {
-  display: none; /* Oculto por padrão */
+  display: none;
   position: fixed;
   z-index: 2000;
-  padding-top: 60px;
   left: 0; top: 0;
   width: 100%; height: 100%;
-  overflow: auto;
   background-color: rgba(0,0,0,0.9);
-  animation: fadeIn 0.4s;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  justify-content: center;
+  align-items: center;
 }
 .modal-content {
-  display: block;
-  margin: auto;
   max-width: 80%;
   max-height: 80%;
   border-radius: 10px;
-  animation: zoom 0.4s;
-}
-@keyframes zoom {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+  transition: transform 0.3s ease;
 }
 .close {
   position: absolute;
@@ -106,8 +137,6 @@ nav a:hover {
   right: 45px;
   color: #f1f5f9;
   font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
   cursor: pointer;
 }
 .close:hover {
@@ -119,5 +148,8 @@ nav a:hover {
   .header-image {
     width: 40px;
     height: 40px;
+  }
+  .hero-name {
+    font-size: 3rem;
   }
 }
