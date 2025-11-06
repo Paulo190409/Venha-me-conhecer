@@ -1,1 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo - Site Pessoal</title>
+
+  <!-- SDKs -->
+  <script src="/sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>@view-transition { navigation: auto; }</style>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header id="header">
+    <div class="header-content">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu de navegação">☰</button>
+      <nav id="nav">
+        <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
+        <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
+        <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <!-- Seção Hero -->
+    <section class="hero" id="home">
+      <div class="hero-background"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-name" id="heroName">PAULO</h1>
+        <div class="decorative-line"></div>
+        <p class="hero-identity" id="heroIdentity">DINÂMICO. ALEGRE. ESFORÇADO.</p>
+        <p class="hero-description" id="heroDescription">
+          Venha me conhecer. Sou Paulo, alguém que valoriza ideias, conexões e benefícios.
+        </p>
+      </div>
+    </section>
+
+    <!-- Página Família -->
+    <section class="page" id="familia" style="display: none;">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1 id="familiaTitle">FAMÍLIA</h1>
+        <div class="content-area">
+          <h3 id="familiaSubtitle1">Minha Base</h3>
+          <p id="familiaText1">
+            A família é o alicerce da minha vida. Aqui compartilho sobre as pessoas que me formaram e continuaram sendo minha fonte de força e inspiração.
+          </p>
+
+          <h3 id="familiaSubtitle2">Valores e Tradições</h3>
+          <p id="familiaText2">
+            Os ensinamentos, valores e tradições familiares que moldam quem sou hoje.
+          </p>
+
+          <h3 id="familiaSubtitle3">Momentos Especiais</h3>
+          <p id="familiaText3">
+            Memórias preciosas, celebrações e momentos únicos que construímos juntos ao longo dos anos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página Meu Futuro -->
+    <section class="page" id="meu-futuro" style="display: none;">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1 id="futuroTitle">MEU FUTURO</h1>
+        <div class="content-area">
+          <h3 id="futuroSubtitle1">Sonhos e Aspirações</h3>
+          <p id="futuroText1">
+            Aqui compartilho meus sonhos, planos e aspirações. Os caminhos que pretendo trilhar e as metas que me motivam a crescer cada dia mais.
+          </p>
+
+          <h3 id="futuroSubtitle2">Objetivos Profissionais</h3>
+          <p id="futuroText2">
+            Metas e projetos que quero desenvolver na minha carreira, sempre buscando crescimento e novas oportunidades.
+          </p>
+
+          <h3 id="futuroSubtitle3">Vida Pessoal</h3>
+          <p id="futuroText3">
+            Experiências que quero viver, lugares que desejo conhecer e momentos especiais que planejo criar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Página Amigos -->
+    <section class="page" id="amigos" style="display:none;">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1 id="amigosTitle">AMIGOS</h1>
+        <div class="content-area">
+          <h3 id="amigosSubtitle1">Conexões Especiais</h3>
+          <p id="amigosText1">
+            As pessoas especiais que fazem parte da minha vida. Conexões verdadeiras que me inspiram, apoiam e tornam a jornada mais significativa.
+          </p>
+
+          <h3 id="amigosSubtitle2">Momentos Marcantes</h3>
+          <p id="amigosText2">
+            Histórias e memórias compartilhadas que construíram laços e me ajudaram a crescer como pessoa.
+          </p>
+
+          <h3 id="amigosSubtitle3">Gratidão</h3>
+          <p id="amigosText3">
+            Reconhecimento por aqueles que estiveram ao meu lado nos momentos importantes da vida.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
 
