@@ -199,3 +199,39 @@ footer {
 }
 
 
+body {
+    /* Fundo escuro para destacar a animação */
+    background-color: #1a1a2e; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Estilo do círculo */
+.circulo-pulsante {
+    width: 100px;
+    height: 100px;
+    background-color: #ff5757; /* Um vermelho vibrante */
+    border-radius: 50%;
+    /* Adiciona uma sombra suave para profundidade */
+    box-shadow: 0 0 10px #ff5757, 0 0 40px #ff5757, 0 0 80px #ff5757;
+    
+    /* Configuração principal da animação: nome, duração, curva de tempo, repetição */
+    animation: pulso 2s ease-in-out infinite alternate;
+}
+
+/* Definição dos Keyframes (os estágios da animação) */
+@keyframes pulso {
+    0% {
+        /* Estado inicial: ligeiramente menor */
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    100% {
+        /* Estado final: tamanho original ou ligeiramente maior, com opacidade total */
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
