@@ -1,112 +1,97 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paulo - Site Pessoal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo - Site Pessoal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Cabeçalho -->
-  <header id="header">
-    <div class="header-content">
-      <nav id="nav">
-        <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
-        <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
-        <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
-      </nav>
+    <header id="header">
+    <div class="header-content">
+      <nav id="nav">
+        <a href="#home" onclick="showPage('home'); return false;">Início</a>
+        <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
+        <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
+        <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
+      </nav>
 
-      <!-- Imagem -->
-      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
-           alt="Foto de Paulo"
-           class="header-image"
-           id="profileImage">
-    </div>
-  </header>
+            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
+           alt="Foto de Paulo"
+           class="header-image"
+           id="profileImage">
+    </div>
+  </header>
 
-  <!-- Modal da imagem expandida -->
-  <div id="imageModal" class="modal">
-    <span class="close" id="closeModal">&times;</span>
-    <img class="modal-content" id="expandedImg" alt="Imagem ampliada">
-  </div>
+    <div id="imageModal" class="modal">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="expandedImg" alt="Imagem ampliada">
+  </div>
 
-  <!-- Conteúdo -->
-  <main>
-    <!-- Página inicial -->
-    <section class="hero active fade-in" id="home">
-      <div class="hero-content">
-        <h1 class="hero-name">PAULO</h1>
-        <div class="decorative-line"></div>
-        <p class="hero-identity">DINÂMICO. ALEGRE. ESFORÇADO.</p>
-        <p class="hero-description">
-          Venha me conhecer. Sou Paulo, alguém que valoriza ideias, conexões e benefícios.
-        </p>
-      </div>
-    </section>
+    <main id="main-content">
+        <section class="hero page" id="home">
+      <div class="hero-content">
+        <h1 class="hero-name">PAULO</h1>
+        <div class="decorative-line"></div>
+        <p class="hero-identity">DINÂMICO. ALEGRE. ESFORÇADO.</p>
+        <p class="hero-description">
+          Venha me conhecer. Sou Paulo, alguém que valoriza ideias, conexões e benefícios.
+        </p>
+      </div>
+    </section>
 
-    <!-- Família -->
-    <section class="page fade-in" id="familia">
-      <div class="page-content">
-        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>FAMÍLIA</h1>
-        <div class="content-area">
-          <h3>Minha Base</h3>
-          <p>A família é o alicerce da minha vida. É onde encontro força, amor e inspiração para seguir em frente.</p>
+        <section class="page" id="familia">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1>FAMÍLIA</h1>
+        <div class="content-area">
+          <h3>Minha Base</h3>
+          <p>A família é o alicerce da minha vida. É onde encontro força, amor e inspiração para seguir em frente.</p>
+          <h3>Valores e Tradições</h3>
+          <p>Os valores que carrego – respeito, união e generosidade – nasceram no lar.</p>
+          <h3>Momentos Especiais</h3>
+          <p>Os melhores momentos da vida são os que compartilhamos com quem amamos.</p>
+        </div>
+      </div>
+    </section>
 
-          <h3>Valores e Tradições</h3>
-          <p>Os valores que carrego – respeito, união e generosidade – nasceram no lar.</p>
+        <section class="page" id="meu-futuro">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1>MEU FUTURO</h1>
+        <div class="content-area">
+          <h3>Sonhos e Aspirações</h3>
+          <p>Meu futuro é guiado por metas e sonhos. Busco crescer como pessoa e profissional.</p>
+          <h3>Objetivos Profissionais</h3>
+          <p>Quero construir uma carreira sólida, que una propósito e impacto positivo.</p>
+          <h3>Vida Pessoal</h3>
+          <p>Planejo viver experiências marcantes, conhecer o mundo e criar histórias inspiradoras.</p>
+        </div>
+      </div>
+    </section>
 
-          <h3>Momentos Especiais</h3>
-          <p>Os melhores momentos da vida são os que compartilhamos com quem amamos.</p>
-        </div>
-      </div>
-    </section>
+        <section class="page" id="amigos">
+      <div class="page-content">
+        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
+        <h1>AMIGOS</h1>
+        <div class="content-area">
+          <h3>Conexões Especiais</h3>
+          <p>Amigos são a família que escolhemos. São risadas, conselhos e cumplicidade.</p>
+          <h3>Momentos Marcantes</h3>
+          <p>As histórias vividas com meus amigos são lembranças que levarei para sempre.</p>
+          <h3>Gratidão</h3>
+          <p>Sou grato por cada pessoa que fez parte da minha jornada.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Meu Futuro -->
-    <section class="page fade-in" id="meu-futuro">
-      <div class="page-content">
-        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>MEU FUTURO</h1>
-        <div class="content-area">
-          <h3>Sonhos e Aspirações</h3>
-          <p>Meu futuro é guiado por metas e sonhos. Busco crescer como pessoa e profissional.</p>
+    <footer>
+    <p>© 2025 Paulo - Todos os direitos reservados</p>
+  </footer>
 
-          <h3>Objetivos Profissionais</h3>
-          <p>Quero construir uma carreira sólida, que una propósito e impacto positivo.</p>
-
-          <h3>Vida Pessoal</h3>
-          <p>Planejo viver experiências marcantes, conhecer o mundo e criar histórias inspiradoras.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Amigos -->
-    <section class="page fade-in" id="amigos">
-      <div class="page-content">
-        <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>AMIGOS</h1>
-        <div class="content-area">
-          <h3>Conexões Especiais</h3>
-          <p>Amigos são a família que escolhemos. São risadas, conselhos e cumplicidade.</p>
-
-          <h3>Momentos Marcantes</h3>
-          <p>As histórias vividas com meus amigos são lembranças que levarei para sempre.</p>
-
-          <h3>Gratidão</h3>
-          <p>Sou grato por cada pessoa que fez parte da minha jornada.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2025 Paulo - Todos os direitos reservados</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
 
