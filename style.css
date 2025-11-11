@@ -1,327 +1,262 @@
-/* ==========================================================
-   CSS OTIMIZADO E REFINADO - Site Pessoal Dark Mode
-   ========================================================== */
-
-/* 1. VARIÁVEIS CSS (Custom Properties) */
-:root {
-  /* Cores Principais - Dark Mode */
-  --color-bg-primary: #0f172a;       /* Fundo Principal (Slate-900) */
-  --color-bg-secondary: #1e293b;     /* Fundo Secundário (Slate-800) */
-  --color-text-primary: #f1f5f9;     /* Texto Claro (Slate-100) */
-  --color-text-secondary: #cbd5e1;   /* Texto Secundário (Slate-300) */
-  --color-accent: #60a5fa;           /* Destaque (Blue-400) */
-  --color-shadow: rgba(0, 0, 0, 0.3);
-
-  /* Espaçamento e Transições */
-  --header-height: 4.5rem;
-  --transition-speed: 0.3s;
-  --animation-speed: 0.8s;
-}
-
-/* 2. ESTILOS GERAIS E RESET */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  /* A remoção do overflow-x: hidden; não é recomendada no body */
-  /* se for para esconder barras de rolagem, mas se necessário */
-  /* deve ser aplicado com cuidado para evitar quebras de layout. */
-  overflow-x: hidden; 
-  line-height: 1.6;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
 }
 
-/* 3. CABEÇALHO (HEADER) */
+/* Estilos do cabeçalho */
 header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  /* Usando variáveis e cores mais escuras/opacas */
-  background: rgba(15, 23, 42, 0.98); 
-  backdrop-filter: blur(15px); /* Efeito blur ligeiramente mais forte */
-  z-index: 1000;
-  height: var(--header-height);
-  padding: 0 2rem; /* Remove padding vertical, usa height */
-  box-shadow: 0 4px 12px var(--color-shadow);
-  display: flex;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%; /* Ajuste para preencher o header */
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #f1f5f9;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
 }
 nav {
-  display: flex;
-  gap: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 nav a {
-  color: var(--color-text-primary);
-  text-decoration: none;
-  transition: color var(--transition-speed) ease, 
-              border-bottom 0.3s ease; /* Adicionando transição de sublinhado */
-  font-weight: 500;
-  padding-bottom: 3px;
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 }
 nav a:hover {
-  color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
 }
 
-/* 4. IMAGEM DO PERFIL */
-.header-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--color-accent);
-  cursor: pointer;
-  transition: transform var(--transition-speed) ease, 
-              box-shadow var(--transition-speed) ease;
-}
-.header-image:hover {
-  transform: scale(1.1); /* Animação mais perceptível */
-  box-shadow: 0 0 15px var(--color-accent); /* Efeito de brilho */
-}
-
-/* 5. HERO SECTION */
+/* Seção Hero */
 .hero {
-  /* Garante que o conteúdo comece após o header fixo */
-  padding-top: calc(var(--header-height) + 2rem); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-primary));
-  text-align: center;
-  padding-bottom: 4rem; /* Padding inferior para telas pequenas */
-  
-  /* Estados de transição */
-  opacity: 0;
-  transform: translateY(20px);
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
 }
-.hero.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity var(--animation-speed) ease-out, 
-              transform var(--animation-speed) ease-out;
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e3a8a 100%);
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+    z-index: 1;
 }
 .hero-content {
-  max-width: 800px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .hero-name {
-  font-size: 5rem;
-  font-weight: 800;
-  margin: 0;
-  line-height: 1.1;
+    font-size: 5rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    /* Correção da sintaxe CSS */
+    margin: 0 0 1rem 0; 
+    letter-spacing: 0.1em;
+    text-shadow: 0 4px 20px rgba(96, 165, 250, 0.3);
 }
 .decorative-line {
-  width: 100px;
-  height: 3px;
-  background: var(--color-accent); /* Simplificado para uma cor sólida */
-  margin: 1.5rem auto; /* Ajuste o espaçamento */
+    /* Correção da sintaxe CSS */
+    width: 100px; 
+    height: 4px;
+    background:linear-gradient(90deg, transparent, #60a5fa, transparent);
+    margin: 1.5rem auto;
+    border-radius: 2px;
 }
 .hero-identity {
-  font-weight: 700;
-  color: var(--color-accent);
-  font-size: 1.6rem; /* Aumentado ligeiramente */
-  letter-spacing: 0.15em; /* Aumentado ligeiramente */
-  text-transform: uppercase;
+    font-size: 1.25rem;
+    color: #60a5fa;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin: 1.5rem 0;
 }
 .hero-description {
-  color: var(--color-text-secondary);
-  font-size: 1.2rem;
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 1.5rem auto 0;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin: 2rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* 6. PÁGINAS INTERNAS (SECTIONS) */
+/* Seções da Página */
 .page {
-  display: none;
-  /* Garante que o conteúdo comece após o header fixo */
-  padding-top: calc(var(--header-height) + 4rem); 
-  padding-bottom: 4rem;
-  min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-bg-primary), var(--color-bg-secondary));
-  
-  /* Estados de transição */
-  opacity: 0;
-  transform: translateY(20px);
-}
-.page.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity var(--animation-speed) ease-out, 
-              transform var(--animation-speed) ease-out;
+    min-height: 100%;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 .page-content {
-  max-width: 900px;
-  margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out;
 }
-.page-content h1 {
-  font-size: 3.5rem; /* Aumentado ligeiramente */
-  margin-bottom: 2.5rem;
-  color: var(--color-accent);
-  text-align: center;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.content-area {
-  background: rgba(30, 41, 59, 0.6); /* Fundo mais escuro/opaco */
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  border-radius: 1.5rem; /* Borda mais arredondada */
-  padding: 3rem 4rem; /* Padding interno mais generoso */
-  backdrop-filter: blur(12px); 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-}
-.content-area h3 {
-  font-size: 2rem;
-  color: var(--color-accent);
-  margin: 2.5rem 0 1rem;
-}
-.content-area p {
-  font-size: 1.15rem;
-  color: var(--color-text-secondary);
-  line-height: 1.75;
-}
-
-/* 7. BOTÃO VOLTAR */
 .back-btn {
-  /* Refinado para um estilo 'ghost' mais limpo */
-  background: transparent;
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent); 
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem; /* Mais arredondado (pill shape) */
-  cursor: pointer;
-  font-weight: 600;
-  transition: all var(--transition-speed) ease;
-  margin-bottom: 2rem;
+    background: rgba(96, 165, 250, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
 }
 .back-btn:hover {
-  background: var(--color-accent); /* Inverte as cores ao passar o mouse */
-  color: var(--color-bg-primary); 
-  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.5);
+    background: rgba(96, 165, 250, 0.2);
+    border-color: #60a5fa;
+    transform: translateX(-5px);
 }
-
-/* 8. MODAL IMAGEM */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.95); /* Fundo um pouco mais escuro */
-  display: flex; /* Garante que o display: flex; funcione para centralizar */
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.3s;
-  opacity: 0;
+.page-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 3rem 0;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 10px rgba(96, 165, 250, 0.2);
 }
-/* Classe JS para mostrar o modal */
-.modal.show-modal { 
-  display: flex;
-  opacity: 1;
-}
-.modal-content {
-  max-width: 90%; /* Aumentado para melhor visualização em desktop */
-  max-height: 90%; 
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-.close {
-  position: absolute;
-  top: 20px; /* Mais perto da borda */
-  right: 30px;
-  color: var(--color-text-primary);
-  font-size: 3rem; /* Tamanho maior para cliques */
-  cursor: pointer;
-  transition: color var(--transition-speed) ease, transform 0.3s ease;
-}
-.close:hover { 
-  color: var(--color-accent); 
-  transform: rotate(90deg);
-}
-
-/* 9. RODAPÉ */
-footer {
-  text-align: center;
-  padding: 1rem 0; /* Aumentado o padding para melhor legibilidade */
-  font-size: 0.9rem;
-  color: var(--color-bg-primary);
-  background: var(--color-text-primary); /* Fundo branco para contraste */
-  border-top: 1px solid #ddd;
-}
-
-
-/* 10. RESPONSIVIDADE (MEDIA QUERIES) */
-
-/* Para tablets e telas menores que 900px */
-@media (max-width: 900px) {
-  .content-area {
-    padding: 2rem;
-  }
-}
-
-/* Para celulares e telas menores que 600px */
-@media (max-width: 600px) {
-  /* Header */
-  .header-content {
-    flex-direction: column; /* Empilha a navegação e a imagem */
-    gap: 1rem;
-    padding-top: 10px;
-  }
-  header {
-    height: auto; /* Permite que o header cresça */
-    padding: 1rem 0;
-    position: static; /* Desativa 'fixed' para que o conteúdo não fique escondido */
-  }
-  nav {
-    gap: 1rem;
-    flex-wrap: wrap; /* Permite que os links quebrem a linha */
-    justify-content: center;
-  }
-
-  /* Hero */
-  .hero-name {
-    font-size: 3.5rem; /* Diminui o tamanho do nome */
-  }
-  .hero-identity {
-    font-size: 1.2rem;
-  }
-  .hero-description {
-    font-size: 1rem;
-  }
-  .hero, .page {
-    /* Ajusta o padding no topo para não haver mais header fixo */
-    padding-top: 2rem; 
-  }
-
-  /* Páginas internas */
-  .page-content h1 {
-    font-size: 2.5rem;
-  }
-  .content-area {
-    padding: 1.5rem;
+.content-area {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(96, 165, 250, 0.2);
     border-radius: 1rem;
-  }
-  .content-area h3 {
-    font-size: 1.5rem;
-  }
-  .content-area p {
-    font-size: 1rem;
-  }
+    padding: 3rem;
+    backdrop-filter: blur(10px);
+}
+.content-area h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin: 2rem 0 1rem 0;
+}
+.content-area h3:first-child {
+    margin-top: 0;
+}
+.content-area p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin: 0 0 2rem 0;
+}
+.content-area p:last-child {
+    margin-bottom: 0;
 }
 
-/* Regra extra para reativar o header fixo em telas maiores */
-@media (min-width: 601px) {
+/* Design Responsivo */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.98);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+        display: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    nav.active {
+        display: flex;
+    }
+    nav a {
+        padding: 1rem 2rem;
+        border-radius: 0;
+    }
+    .hero-name {
+        font-size: 3rem;
+    }
+    .hero-identity {
+        font-size: 1rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .page-content h1 {
+        font-size: 2.5rem;
+    }
+    .content-area {
+        padding: 2rem;
+    }
+    .content-area h3 {
+        font-size: 1.5rem;
+    }
+    .content-area p {
+        font-size: 1rem;
+    }
+}
+@media (max-width:480px) {
     header {
-        position: fixed;
+        padding: 1rem;
+    }
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    .page {
+        padding: 5rem 1rem 3rem;
+    }
+    .content-area {
+        padding: 1.5rem;
     }
 }
