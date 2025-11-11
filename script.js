@@ -22,38 +22,3 @@ function showPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Imagem ampliada
-const profileImage = document.getElementById('profileImage');
-const modal = document.getElementById('imageModal');
-const expandedImg = document.getElementById('expandedImg');
-const closeModal = document.getElementById('closeModal');
-
-profileImage.addEventListener('click', () => {
-  modal.style.display = "flex";
-  expandedImg.src = profileImage.src;
-});
-
-closeModal.addEventListener('click', () => modal.style.display = "none");
-modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = "none"; });
-window.addEventListener('keydown', e => { if (e.key === "Escape") modal.style.display = "none"; });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const circulo = document.getElementById('circulo');
-    
-    // Exemplo de como você poderia usar JS para adicionar interatividade
-    circulo.addEventListener('click', () => {
-        // Altera a cor do círculo ao clicar, só por demonstração
-        circulo.style.backgroundColor = '#57e8ff'; // Muda para ciano
-    });
-    
-    console.log('Animação do círculo carregada!');
-});
-
-// Se você quisesse fazer a animação puramente em JS,
-// usaria a função requestAnimationFrame para suavidade:
-/* function animar() {
-    // Lógica para mudar propriedades CSS a cada frame
-    requestAnimationFrame(animar);
-}
-// animar();
-*/
