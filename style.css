@@ -215,4 +215,74 @@ body.light-mode .content-area {
     header {
         position: fixed;
     }
+}/* ... (Seus estilos :root, body, etc.) ... */
+
+/* 1. CORREÇÃO DO HEADER: Garante que o conteúdo seja exibido */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    /* Garante que a navegação (esquerda) e o grupo direito fiquem nas pontas */
+    justify-content: space-between; 
+    align-items: center;
 }
+/* A navegação continua no lado esquerdo por padrão */
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+/* 2. NOVO: Grupo de elementos à direita (Switch + Imagem) */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o switch e a imagem */
+}
+
+/* 3. CORREÇÃO DO HERO: Fixar o conteúdo no meio da tela */
+.hero {
+    /* REMOVIDO: min-height: 100%; */
+    /* REMOVIDO: padding: 6rem 2rem 4rem; */
+    
+    position: fixed; /* Fixa o Hero na viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa toda a tela */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 10; /* Abaixo do header (z-index: 1000) */
+}
+
+/* 4. CORREÇÃO DO RODAPÉ (Torná-lo Fino) */
+footer {
+    position: fixed; /* Fixa no final da tela, se desejar */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+    padding: 0.5rem; /* Tornando o padding menor (mais fino) */
+    
+    font-size: 0.85rem;
+    color: #1e293b; /* Texto escuro no rodapé */
+    background: #f1f5f9; /* Fundo claro no rodapé */
+    border-top: 1px solid #e2e8f0;
+    z-index: 1001; /* Fica acima do hero, mas abaixo do header principal */
+}
+
+/* 5. CORREÇÃO DAS PÁGINAS INTERNAS (para aparecerem abaixo do header) */
+.page {
+    /* Ajusta o padding-top para compensar o header fixo */
+    padding-top: 6rem; 
+    min-height: 100vh;
+    /* ... (restante do estilo .page) ... */
+    
+    position: relative; /* Volta ao fluxo normal após o Hero fixo */
+    z-index: 20; /* Fica acima do hero (z-index: 10) */
+}
+
+/* ... (O restante do seu CSS, incluindo .theme-switch-container, .modal, etc., permanece igual) ... */
