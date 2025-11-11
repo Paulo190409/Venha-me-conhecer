@@ -10,29 +10,31 @@
 <body>
     <header id="header">
     <div class="header-content">
-      <nav id="nav">
-        <a href="#home" onclick="showPage('home'); return false;">Início</a>
-        <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
-        <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
-        <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
+      
+            <nav id="nav" aria-label="Navegação Principal">
+                <a href="#home" onclick="showPage('home'); return false;" role="button" aria-current="page">Início</a>
+        <a href="#familia" onclick="showPage('familia'); return false;" role="button">Família</a>
+        <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;" role="button">Meu Futuro</a>
+        <a href="#amigos" onclick="showPage('amigos'); return false;" role="button">Amigos</a>
       </nav>
 
             <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
-           alt="Foto de Paulo"
+           alt="Foto de perfil de Paulo. Clique para ampliar."
            class="header-image"
            id="profileImage">
     </div>
   </header>
 
-    <div id="imageModal" class="modal">
-    <span class="close" id="closeModal">&times;</span>
-    <img class="modal-content" id="expandedImg" alt="Imagem ampliada">
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <h2 id="modalHeading" class="sr-only">Imagem Ampliada</h2>     <button class="close" id="closeModal" aria-label="Fechar imagem ampliada">&times;</button>
+    <img class="modal-content" id="expandedImg" alt="Imagem ampliada do perfil de Paulo">
   </div>
 
     <main id="main-content">
-        <section class="hero page" id="home">
+    
+        <section class="hero page active-page" id="home" role="region" aria-labelledby="home-heading">
       <div class="hero-content">
-        <h1 class="hero-name">PAULO</h1>
+        <h1 class="hero-name" id="home-heading">PAULO</h1>
         <div class="decorative-line"></div>
         <p class="hero-identity">DINÂMICO. ALEGRE. ESFORÇADO.</p>
         <p class="hero-description">
@@ -41,12 +43,12 @@
       </div>
     </section>
 
-        <section class="page" id="familia">
+        <section class="page" id="familia" role="region" aria-labelledby="familia-heading" style="display: none;">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>FAMÍLIA</h1>
+        <h1 id="familia-heading">FAMÍLIA</h1>
         <div class="content-area">
-          <h3>Minha Base</h3>
+                    <h3>Minha Base</h3>
           <p>A família é o alicerce da minha vida. É onde encontro força, amor e inspiração para seguir em frente.</p>
           <h3>Valores e Tradições</h3>
           <p>Os valores que carrego – respeito, união e generosidade – nasceram no lar.</p>
@@ -56,10 +58,10 @@
       </div>
     </section>
 
-        <section class="page" id="meu-futuro">
+        <section class="page" id="meu-futuro" role="region" aria-labelledby="futuro-heading" style="display: none;">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>MEU FUTURO</h1>
+        <h1 id="futuro-heading">MEU FUTURO</h1>
         <div class="content-area">
           <h3>Sonhos e Aspirações</h3>
           <p>Meu futuro é guiado por metas e sonhos. Busco crescer como pessoa e profissional.</p>
@@ -71,10 +73,10 @@
       </div>
     </section>
 
-        <section class="page" id="amigos">
+        <section class="page" id="amigos" role="region" aria-labelledby="amigos-heading" style="display: none;">
       <div class="page-content">
         <button class="back-btn" onclick="showPage('home')">← Voltar</button>
-        <h1>AMIGOS</h1>
+        <h1 id="amigos-heading">AMIGOS</h1>
         <div class="content-area">
           <h3>Conexões Especiais</h3>
           <p>Amigos são a família que escolhemos. São risadas, conselhos e cumplicidade.</p>
@@ -88,11 +90,9 @@
   </main>
 
     <footer>
-    <p>© 2025 Paulo - Todos os direitos reservados</p>
+    <p>© <time datetime="2025">2025</time> Paulo - Todos os direitos reservados</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
