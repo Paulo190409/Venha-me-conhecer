@@ -1,76 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paulo - Site Pessoal</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/_sdk/element_sdk.js"></script>
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo - Site Pessoal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="left-controls">
-            <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
-            <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
-                 alt="Foto do Paulo" 
-                 class="profile-image" 
-                 onclick="openImageModal()" 
-                 onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
-        </div>
-        <nav class="navigation">
-            <a href="#" class="nav-link" onclick="showSection('familia')">Família</a>
-            <a href="#" class="nav-link" onclick="showSection('futuro')">Meu Futuro</a>
-            <a href="#" class="nav-link" onclick="showSection('amigos')">Amigos</a>
-        </nav>
-    </header>
+  <header class="header">
+    <div class="left-controls">
+      <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
+      <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
+           alt="Foto do Paulo" 
+           class="profile-image" 
+           onclick="openImageModal()" 
+           onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+    </div>
+    <nav class="navigation">
+      <a href="#" class="nav-link" onclick="showSection('familia')">Família</a>
+      <a href="#" class="nav-link" onclick="showSection('futuro')">Meu Futuro</a>
+      <a href="#" class="nav-link" onclick="showSection('amigos')">Amigos</a>
+    </nav>
+  </header>
 
-    <main class="main-content">
-        <div id="home" class="hero-section">
-            <h1 class="main-title" id="nome-principal">Paulo</h1>
-            <div class="title-underline"></div>
-            <div class="qualities">
-                <span class="quality" id="qualidade-1">Dinâmico</span>
-                <span class="quality" id="qualidade-2">Alegre</span>
-                <span class="quality" id="qualidade-3">Esforçado</span>
-            </div>
-            <div class="description" id="descricao-pessoal">
-                Olá! Sou uma pessoa apaixonada pela vida, sempre em busca de novos desafios e experiências...
-            </div>
-        </div>
-
-        <div id="familia-section" class="content-section">
-            <h2>Família</h2>
-            <p id="texto-familia">A família é o alicerce da minha vida...</p>
-            <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-        </div>
-
-        <div id="futuro-section" class="content-section">
-            <h2>Meu Futuro</h2>
-            <p id="texto-futuro">Olho para o futuro com otimismo e determinação...</p>
-            <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-        </div>
-
-        <div id="amigos-section" class="content-section">
-            <h2>Amigos</h2>
-            <p id="texto-amigos">Os amigos são a família que escolhemos...</p>
-            <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-        </div>
-    </main>
-
-    <div class="image-modal" id="imageModal" onclick="closeImageModal()">
-        <span class="close-modal">×</span>
-        <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
-             alt="Foto ampliada do Paulo" 
-             class="modal-image" 
-             onerror="this.src=''; this.alt='Imagem não disponível';">
+  <main class="main-content">
+    <div id="home" class="hero-section">
+      <h1 class="main-title" id="nome-principal">Paulo</h1>
+      <div class="title-underline"></div>
+      <div class="qualities">
+        <span class="quality" id="qualidade-1">Dinâmico</span>
+        <span class="quality" id="qualidade-2">Alegre</span>
+        <span class="quality" id="qualidade-3">Esforçado</span>
+      </div>
+      <div class="description" id="descricao-pessoal">
+        Olá! Sou uma pessoa apaixonada pela vida, sempre em busca de novos desafios e experiências. Acredito que cada dia é uma oportunidade de crescer, aprender e fazer a diferença na vida das pessoas ao meu redor. Minha jornada é marcada pela determinação, alegria e um constante desejo de evolução pessoal e profissional.
+      </div>
     </div>
 
-    <footer class="footer">
-        © 2025 Paulo - Todos os direitos reservados.
-    </footer>
+    <div id="familia-section" class="content-section">
+      <h2>Família</h2>
+      <p id="texto-familia">
+        A família é o alicerce da minha vida. É onde encontro amor incondicional, apoio e os valores que me guiam. Cada momento compartilhado com meus familiares é precioso, desde as conversas calorosas até as celebrações especiais. Eles são minha fonte de inspiração e força para enfrentar qualquer desafio que a vida apresente.
+      </p>
+      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="futuro-section" class="content-section">
+      <h2>Meu Futuro</h2>
+      <p id="texto-futuro">
+        Olho para o futuro com otimismo e determinação. Tenho grandes planos e sonhos que pretendo realizar, sempre focado no crescimento pessoal e profissional. Acredito que com dedicação, esforço e uma mentalidade positiva, posso alcançar qualquer objetivo que me proponha. O futuro é cheio de possibilidades e estou pronto para abraçá-las.
+      </p>
+      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
+    </div>
+
+    <div id="amigos-section" class="content-section">
+      <h2>Amigos</h2>
+      <p id="texto-amigos">
+        Os amigos são a família que escolhemos. Tenho a sorte de ter pessoas incríveis ao meu lado, que compartilham momentos de alegria, me apoiam nos momentos difíceis e tornam a vida mais colorida e divertida. Cada amizade é única e especial, construída com base na confiança, respeito e carinho mútuo.
+      </p>
+      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
+    </div>
+  </main>
+
+  <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+    <span class="close-modal">×</span>
+    <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
+         alt="Foto ampliada do Paulo" 
+         class="modal-image" 
+         onerror="this.src=''; this.alt='Imagem não disponível';">
+  </div>
+
+  <footer class="footer">
+    © 2025 Paulo - Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
