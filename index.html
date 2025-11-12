@@ -8,40 +8,49 @@
 </head>
 <body>
     <header>
-        <div class="left-header">
-            <button id="modo-btn">🌙</button>
-            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
-        </div>
-
-        <nav class="right-header">
+        <!-- Navegação à esquerda -->
+        <nav class="left-header">
             <a href="#familia">Família</a>
             <a href="#meu-futuro">Meu Futuro</a>
             <a href="#amigos">Amigos</a>
         </nav>
+
+        <!-- Botão de modo escuro e foto à direita -->
+        <div class="right-header">
+            <button id="modo-btn">🌙</button>
+            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+        </div>
     </header>
 
     <main>
-        <section class="intro">
+        <!-- Página inicial -->
+        <section class="intro" id="inicio">
             <h1>Paulo</h1>
             <div class="linha"></div>
             <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
-            <p class="descricao">Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.</p>
-            <button id="home-btn">Voltar à Página Inicial</button>
+            <p class="descricao">
+                Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. 
+                Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.
+            </p>
         </section>
 
+        <!-- Seções -->
         <section id="familia">
             <h2>Família</h2>
             <p>Minha família é minha base. Eles me apoiam em tudo e são minha maior inspiração.</p>
+            <button class="home-btn">Voltar à Página Inicial</button>
         </section>
 
         <section id="meu-futuro">
             <h2>Meu Futuro</h2>
             <p>Meu objetivo é continuar crescendo pessoal e profissionalmente, alcançando meus sonhos com esforço e dedicação.</p>
+            <button class="home-btn">Voltar à Página Inicial</button>
         </section>
 
         <section id="amigos">
             <h2>Amigos</h2>
             <p>Meus amigos tornam a vida mais divertida e leve. São eles que estão comigo em todos os momentos.</p>
+            <button class="home-btn">Voltar à Página Inicial</button>
         </section>
     </main>
 

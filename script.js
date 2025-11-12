@@ -1,4 +1,4 @@
-// Botão modo escuro/claro
+// Alternar modo escuro/claro
 const modoBtn = document.getElementById('modo-btn');
 const body = document.body;
 
@@ -7,7 +7,7 @@ modoBtn.addEventListener('click', () => {
     modoBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
 
-// Ampliar foto ao clicar
+// Foto ampliável
 const foto = document.getElementById('foto');
 foto.addEventListener('click', () => {
     const modal = document.createElement('div');
@@ -21,6 +21,7 @@ foto.addEventListener('click', () => {
     modal.style.justifyContent = 'center';
     modal.style.alignItems = 'center';
     modal.style.cursor = 'zoom-out';
+    modal.style.zIndex = 9999;
 
     const imgAmpliada = document.createElement('img');
     imgAmpliada.src = foto.src;
@@ -30,12 +31,13 @@ foto.addEventListener('click', () => {
     modal.appendChild(imgAmpliada);
 
     document.body.appendChild(modal);
-
     modal.addEventListener('click', () => modal.remove());
 });
 
-// Botão voltar para o topo
-const homeBtn = document.getElementById('home-btn');
-homeBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+// Botões "Voltar à Página Inicial"
+const homeBtns = document.querySelectorAll('.home-btn');
+homeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+    });
 });

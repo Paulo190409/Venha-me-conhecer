@@ -1,10 +1,11 @@
-/* Estilo geral */
+/* Geral */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a74da, #2a9df4);
+    background: linear-gradient(135deg, #052f61, #0a4a84);
     color: white;
     transition: background 0.5s, color 0.5s;
+    scroll-behavior: smooth;
 }
 
 /* Cabeçalho */
@@ -15,8 +16,21 @@ header {
     padding: 15px 40px;
 }
 
-/* Botão modo escuro e imagem */
-.left-header {
+/* Navegação (esquerda) */
+.left-header a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.left-header a:hover {
+    color: #cde6ff;
+}
+
+/* Direita: botão e foto */
+.right-header {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -30,6 +44,12 @@ header {
     font-size: 20px;
     cursor: pointer;
     padding: 5px 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+#modo-btn:hover {
+    background: white;
+    color: #0a4a84;
 }
 
 #foto {
@@ -44,20 +64,7 @@ header {
     transform: scale(1.05);
 }
 
-/* Menu */
-.right-header a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.right-header a:hover {
-    color: #d9f1ff;
-}
-
-/* Intro */
+/* Introdução */
 .intro {
     text-align: center;
     margin-top: 80px;
@@ -72,7 +79,7 @@ header {
 .linha {
     width: 120px;
     height: 4px;
-    background: #0077ff;
+    background: #0070cc;
     margin: 0 auto 15px auto;
     border-radius: 3px;
 }
@@ -88,48 +95,55 @@ header {
     font-size: 18px;
 }
 
-#home-btn {
+/* Seções */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.home-btn {
     margin-top: 25px;
     padding: 10px 20px;
     border: none;
     background: white;
-    color: #0077ff;
+    color: #0059b3;
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
 
-#home-btn:hover {
-    background: #0077ff;
+.home-btn:hover {
+    background: #0059b3;
     color: white;
-}
-
-/* Sessões */
-section {
-    padding: 60px 20px;
-    text-align: center;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     color: white;
     font-size: 14px;
 }
 
 /* Modo escuro */
 .dark-mode {
-    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
     color: #f5f5f5;
-}
-
-.dark-mode footer {
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode #modo-btn {
     border-color: #f5f5f5;
+    color: #f5f5f5;
+}
+
+.dark-mode #modo-btn:hover {
+    background: #f5f5f5;
+    color: #1e1e1e;
+}
+
+.dark-mode footer {
+    background: #1e1e1e;
+    color: #f5f5f5;
 }
