@@ -1,79 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paulo - Site Pessoal</title>
   <link rel="stylesheet" href="style.css">
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="left-controls">
-      <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
-      <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
-           alt="Foto do Paulo" 
-           class="profile-image" 
-           onclick="openImageModal()" 
-           onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
-    </div>
-    <nav class="navigation">
-      <a href="#" class="nav-link" onclick="showSection('familia')">Família</a>
-      <a href="#" class="nav-link" onclick="showSection('futuro')">Meu Futuro</a>
-      <a href="#" class="nav-link" onclick="showSection('amigos')">Amigos</a>
+  <!-- ======= CABEÇALHO ======= -->
+  <header>
+    <nav class="left-header">
+      <button class="nav-link" data-page="inicio">Início</button>
+      <button class="nav-link" data-page="familia">Família</button>
+      <button class="nav-link" data-page="meu-futuro">Meu Futuro</button>
+      <button class="nav-link" data-page="amigos">Amigos</button>
     </nav>
+
+    <div class="right-header">
+      <button id="modo-btn">🌙</button>
+      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+    </div>
   </header>
 
-  <main class="main-content">
-    <div id="home" class="hero-section">
-      <h1 class="main-title" id="nome-principal">Paulo</h1>
-      <div class="title-underline"></div>
-      <div class="qualities">
-        <span class="quality" id="qualidade-1">Dinâmico</span>
-        <span class="quality" id="qualidade-2">Alegre</span>
-        <span class="quality" id="qualidade-3">Esforçado</span>
-      </div>
-      <div class="description" id="descricao-pessoal">
-        Olá! Sou uma pessoa apaixonada pela vida, sempre em busca de novos desafios e experiências. Acredito que cada dia é uma oportunidade de crescer, aprender e fazer a diferença na vida das pessoas ao meu redor. Minha jornada é marcada pela determinação, alegria e um constante desejo de evolução pessoal e profissional.
-      </div>
-    </div>
+  <!-- ======= CONTEÚDO ======= -->
+  <main>
+    <!-- Página Inicial -->
+    <section id="inicio" class="pagina ativa">
+      <h1>Paulo</h1>
+      <div class="linha"></div>
+      <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
+      <p class="descricao">
+        Sou uma pessoa determinada, sempre buscando melhorar e aprender mais.  
+        Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.  
+        Acredito que com esforço e otimismo posso conquistar todos os meus objetivos.
+      </p>
+    </section>
 
-    <div id="familia-section" class="content-section">
+    <!-- Família -->
+    <section id="familia" class="pagina">
       <h2>Família</h2>
-      <p id="texto-familia">
-        A família é o alicerce da minha vida. É onde encontro amor incondicional, apoio e os valores que me guiam. Cada momento compartilhado com meus familiares é precioso, desde as conversas calorosas até as celebrações especiais. Eles são minha fonte de inspiração e força para enfrentar qualquer desafio que a vida apresente.
+      <p>
+        A minha família é o coração da minha vida. É com eles que aprendo, cresço e encontro amor incondicional.  
+        Cada momento ao lado deles me fortalece e me inspira a seguir com coragem e gratidão.  
+        A união e o carinho da minha família são a base de tudo o que sou.
       </p>
-      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-    </div>
+    </section>
 
-    <div id="futuro-section" class="content-section">
+    <!-- Meu Futuro -->
+    <section id="meu-futuro" class="pagina">
       <h2>Meu Futuro</h2>
-      <p id="texto-futuro">
-        Olho para o futuro com otimismo e determinação. Tenho grandes planos e sonhos que pretendo realizar, sempre focado no crescimento pessoal e profissional. Acredito que com dedicação, esforço e uma mentalidade positiva, posso alcançar qualquer objetivo que me proponha. O futuro é cheio de possibilidades e estou pronto para abraçá-las.
+      <p>
+        Meu futuro é guiado por sonhos e dedicação. Quero continuar estudando, crescendo e conquistando meus objetivos com esforço e alegria.  
+        Acredito que o sucesso é resultado de perseverança e de nunca desistir, mesmo quando o caminho parece difícil.  
+        O amanhã é uma oportunidade para ser melhor do que hoje.
       </p>
-      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-    </div>
+    </section>
 
-    <div id="amigos-section" class="content-section">
+    <!-- Amigos -->
+    <section id="amigos" class="pagina">
       <h2>Amigos</h2>
-      <p id="texto-amigos">
-        Os amigos são a família que escolhemos. Tenho a sorte de ter pessoas incríveis ao meu lado, que compartilham momentos de alegria, me apoiam nos momentos difíceis e tornam a vida mais colorida e divertida. Cada amizade é única e especial, construída com base na confiança, respeito e carinho mútuo.
+      <p>
+        Meus amigos tornam a vida mais divertida e significativa.  
+        São eles que me acompanham nas aventuras, compartilham risadas e me apoiam nos momentos difíceis.  
+        Valorizo cada amizade sincera, pois acredito que os verdadeiros amigos são tesouros que levamos para sempre.
       </p>
-      <button class="back-button" onclick="showHome()">Voltar ao Início</button>
-    </div>
+    </section>
   </main>
 
-  <div class="image-modal" id="imageModal" onclick="closeImageModal()">
-    <span class="close-modal">×</span>
-    <img src="https://example.com/130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
-         alt="Foto ampliada do Paulo" 
-         class="modal-image" 
-         onerror="this.src=''; this.alt='Imagem não disponível';">
-  </div>
-
-  <footer class="footer">
+  <!-- ======= RODAPÉ ======= -->
+  <footer>
     © 2025 Paulo - Todos os direitos reservados.
   </footer>
 
