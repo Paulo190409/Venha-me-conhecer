@@ -7,23 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== CABEÇALHO ===== -->
+  <!-- ======= CABEÇALHO ======= -->
   <header>
     <nav class="left-header">
-      <a href="#familia" class="nav-link">Família</a>
-      <a href="#meu-futuro" class="nav-link">Meu Futuro</a>
-      <a href="#amigos" class="nav-link">Amigos</a>
+      <button class="nav-link" data-page="inicio">Início</button>
+      <button class="nav-link" data-page="familia">Família</button>
+      <button class="nav-link" data-page="meu-futuro">Meu Futuro</button>
+      <button class="nav-link" data-page="amigos">Amigos</button>
     </nav>
+
     <div class="right-header">
       <button id="modo-btn">🌙</button>
       <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
     </div>
   </header>
 
-  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <!-- ======= CONTEÚDO ======= -->
   <main>
     <!-- Página Inicial -->
-    <section class="intro" id="inicio">
+    <section id="inicio" class="pagina ativa">
       <h1>Paulo</h1>
       <div class="linha"></div>
       <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
@@ -42,7 +44,6 @@
         Cada momento ao lado deles me fortalece e me inspira a seguir com coragem e gratidão.  
         A união e o carinho da minha família são a base de tudo o que sou.
       </p>
-      <button class="home-btn" onclick="window.location.href='#inicio'">Voltar à Página Inicial</button>
     </section>
 
     <!-- Meu Futuro -->
@@ -53,7 +54,6 @@
         Acredito que o sucesso é resultado de perseverança e de nunca desistir, mesmo quando o caminho parece difícil.  
         O amanhã é uma oportunidade para ser melhor do que hoje.
       </p>
-      <button class="home-btn" onclick="window.location.href='#inicio'">Voltar à Página Inicial</button>
     </section>
 
     <!-- Amigos -->
@@ -64,11 +64,10 @@
         São eles que me acompanham nas aventuras, compartilham risadas e me apoiam nos momentos difíceis.  
         Valorizo cada amizade sincera, pois acredito que os verdadeiros amigos são tesouros que levamos para sempre.
       </p>
-      <button class="home-btn" onclick="window.location.href='#inicio'">Voltar à Página Inicial</button>
     </section>
   </main>
 
-  <!-- ===== RODAPÉ ===== -->
+  <!-- ======= RODAPÉ ======= -->
   <footer>
     © 2025 Paulo - Todos os direitos reservados.
   </footer>
