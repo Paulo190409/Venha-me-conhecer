@@ -1,64 +1,197 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site com Modal e Modo Escuro</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Funcional</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Botão de tema */
+  .theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+  }
+
+  /* Seções */
+  .content-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Tópicos */
+  .topics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .topic {
+    cursor: pointer;
+  }
+
+  .topic img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+
+  .topic img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Botão voltar */
+  .back-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* Modal */
+  #imageModal {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  #imageModal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  /* Modo escuro */
+  .dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+  }
+
+  .dark-mode .theme-toggle {
+    background-color: #f39c12;
+    color: #2c3e50;
+  }
+
+</style>
 </head>
 <body>
 
-  <!-- Botão de Modo Escuro / Claro -->
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
+<!-- Botão Modo Escuro/Claro -->
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
 
-  <!-- Página inicial -->
-  <div id="home" class="content-section">
-    <h1>Bem-vindo!</h1>
-    <p>Clique nos tópicos para ver mais.</p>
+<!-- Página Inicial -->
+<div id="home" class="content-section">
+  <h1>Bem-vindo!</h1>
+  <p>Clique em um tópico abaixo:</p>
 
-    <div class="topics">
-      <div class="topic" onclick="showSection('familia-section')">
-        <h2>Família</h2>
-        <img src="https://via.placeholder.com/250x150?text=Família" alt="Família" class="topic-image">
-      </div>
-      <div class="topic" onclick="showSection('futuro-section')">
-        <h2>Futuro</h2>
-        <img src="https://via.placeholder.com/250x150?text=Futuro" alt="Futuro" class="topic-image">
-      </div>
-      <div class="topic" onclick="showSection('amigos-section')">
-        <h2>Amigos</h2>
-        <img src="https://via.placeholder.com/250x150?text=Amigos" alt="Amigos" class="topic-image">
-      </div>
+  <div class="topics">
+    <div class="topic" onclick="showSection('familia')">
+      <h2>Família</h2>
+      <img src="https://via.placeholder.com/250x150?text=Família" alt="Família">
+    </div>
+    <div class="topic" onclick="showSection('futuro')">
+      <h2>Futuro</h2>
+      <img src="https://via.placeholder.com/250x150?text=Futuro" alt="Futuro">
+    </div>
+    <div class="topic" onclick="showSection('amigos')">
+      <h2>Amigos</h2>
+      <img src="https://via.placeholder.com/250x150?text=Amigos" alt="Amigos">
     </div>
   </div>
+</div>
 
-  <!-- Seções de conteúdo -->
-  <div id="familia-section" class="content-section hidden">
-    <h2>Família</h2>
-    <img src="https://via.placeholder.com/500x300?text=Família" alt="Família" class="topic-image" onclick="openImageModal(this.src)">
-    <p>Aqui você pode escrever sobre sua família.</p>
-    <button class="back-button" onclick="showHome()">Voltar</button>
-  </div>
+<!-- Seções -->
+<div id="familia" class="content-section hidden">
+  <h2>Família</h2>
+  <img src="https://via.placeholder.com/500x300?text=Família" alt="Família" onclick="openModal(this.src)">
+  <p>Informações sobre família.</p>
+  <button class="back-button" onclick="showHome()">Voltar</button>
+</div>
 
-  <div id="futuro-section" class="content-section hidden">
-    <h2>Futuro</h2>
-    <img src="https://via.placeholder.com/500x300?text=Futuro" alt="Futuro" class="topic-image" onclick="openImageModal(this.src)">
-    <p>Aqui você pode escrever sobre seus planos futuros.</p>
-    <button class="back-button" onclick="showHome()">Voltar</button>
-  </div>
+<div id="futuro" class="content-section hidden">
+  <h2>Futuro</h2>
+  <img src="https://via.placeholder.com/500x300?text=Futuro" alt="Futuro" onclick="openModal(this.src)">
+  <p>Informações sobre futuro.</p>
+  <button class="back-button" onclick="showHome()">Voltar</button>
+</div>
 
-  <div id="amigos-section" class="content-section hidden">
-    <h2>Amigos</h2>
-    <img src="https://via.placeholder.com/500x300?text=Amigos" alt="Amigos" class="topic-image" onclick="openImageModal(this.src)">
-    <p>Aqui você pode escrever sobre seus amigos.</p>
-    <button class="back-button" onclick="showHome()">Voltar</button>
-  </div>
+<div id="amigos" class="content-section hidden">
+  <h2>Amigos</h2>
+  <img src="https://via.placeholder.com/500x300?text=Amigos" alt="Amigos" onclick="openModal(this.src)">
+  <p>Informações sobre amigos.</p>
+  <button class="back-button" onclick="showHome()">Voltar</button>
+</div>
 
-  <!-- Modal para imagens -->
-  <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-    <img id="modalImage" class="modal-image" src="" alt="Imagem Ampliada">
-  </div>
+<!-- Modal -->
+<div id="imageModal" onclick="closeModal()">
+  <img id="modalImg" src="" alt="Imagem Ampliada">
+</div>
 
-  <script src="script.js"></script>
+<script>
+  // Alterna tema
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.querySelector('.theme-toggle');
+    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Modo Claro' : '🌙 Modo Escuro';
+  }
+
+  // Mostrar seção
+  function showSection(id) {
+    document.getElementById('home').classList.add('hidden');
+    ['familia', 'futuro', 'amigos'].forEach(section => {
+      document.getElementById(section).classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function showHome() {
+    document.getElementById('home').classList.remove('hidden');
+    ['familia', 'futuro', 'amigos'].forEach(section => {
+      document.getElementById(section).classList.add('hidden');
+    });
+  }
+
+  // Modal de imagem
+  function openModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    modalImg.src = src;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+</script>
+
 </body>
 </html>
