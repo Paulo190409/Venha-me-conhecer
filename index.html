@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paulo - Site Pessoal</title>
+  <title>Paulo - Página Inicial</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ======= CABEÇALHO ======= -->
   <header>
     <nav class="left-header">
-      <button class="nav-link" data-page="inicio">Início</button>
-      <button class="nav-link" data-page="familia">Família</button>
-      <button class="nav-link" data-page="meu-futuro">Meu Futuro</button>
-      <button class="nav-link" data-page="amigos">Amigos</button>
+      <a href="familia.html" class="nav-link">Família</a>
+      <a href="meu-futuro.html" class="nav-link">Meu Futuro</a>
+      <a href="amigos.html" class="nav-link">Amigos</a>
     </nav>
 
     <div class="right-header">
@@ -22,52 +20,136 @@
     </div>
   </header>
 
-  <!-- ======= CONTEÚDO ======= -->
-  <main>
-    <!-- Página Inicial -->
-    <section id="inicio" class="pagina ativa">
-      <h1>Paulo</h1>
-      <div class="linha"></div>
-      <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
-      <p class="descricao">
-        Sou uma pessoa determinada, sempre buscando melhorar e aprender mais.  
-        Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.  
-        Acredito que com esforço e otimismo posso conquistar todos os meus objetivos.
-      </p>
-    </section>
-
-    <!-- Família -->
-    <section id="familia" class="pagina">
-      <h2>Família</h2>
-      <p>
-        A minha família é o coração da minha vida. É com eles que aprendo, cresço e encontro amor incondicional.  
-        Cada momento ao lado deles me fortalece e me inspira a seguir com coragem e gratidão.  
-        A união e o carinho da minha família são a base de tudo o que sou.
-      </p>
-    </section>
-
-    <!-- Meu Futuro -->
-    <section id="meu-futuro" class="pagina">
-      <h2>Meu Futuro</h2>
-      <p>
-        Meu futuro é guiado por sonhos e dedicação. Quero continuar estudando, crescendo e conquistando meus objetivos com esforço e alegria.  
-        Acredito que o sucesso é resultado de perseverança e de nunca desistir, mesmo quando o caminho parece difícil.  
-        O amanhã é uma oportunidade para ser melhor do que hoje.
-      </p>
-    </section>
-
-    <!-- Amigos -->
-    <section id="amigos" class="pagina">
-      <h2>Amigos</h2>
-      <p>
-        Meus amigos tornam a vida mais divertida e significativa.  
-        São eles que me acompanham nas aventuras, compartilham risadas e me apoiam nos momentos difíceis.  
-        Valorizo cada amizade sincera, pois acredito que os verdadeiros amigos são tesouros que levamos para sempre.
-      </p>
-    </section>
+  <main class="intro">
+    <h1>Paulo</h1>
+    <div class="linha"></div>
+    <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
+    <p class="descricao">
+      Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. 
+      Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente. 
+      Acredito que com esforço e otimismo posso conquistar todos os meus objetivos.
+    </p>
   </main>
 
-  <!-- ======= RODAPÉ ======= -->
+  <footer>
+    © 2025 Paulo - Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Família - Paulo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="left-header">
+      <a href="familia.html" class="nav-link">Família</a>
+      <a href="meu-futuro.html" class="nav-link">Meu Futuro</a>
+      <a href="amigos.html" class="nav-link">Amigos</a>
+    </nav>
+
+    <div class="right-header">
+      <button id="modo-btn">🌙</button>
+      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+    </div>
+  </header>
+
+  <main>
+    <h2>Família</h2>
+    <p>
+      Minha família é a base de tudo que sou. São eles que me ensinaram valores como respeito, empatia e determinação. 
+      Cada momento juntos é um aprendizado e uma lembrança preciosa. 
+      Acredito que o apoio e amor familiar são essenciais para enfrentar qualquer desafio.
+    </p>
+    <button class="home-btn" onclick="window.location.href='index.html'">Voltar à Página Inicial</button>
+  </main>
+
+  <footer>
+    © 2025 Paulo - Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Futuro - Paulo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="left-header">
+      <a href="familia.html" class="nav-link">Família</a>
+      <a href="meu-futuro.html" class="nav-link">Meu Futuro</a>
+      <a href="amigos.html" class="nav-link">Amigos</a>
+    </nav>
+
+    <div class="right-header">
+      <button id="modo-btn">🌙</button>
+      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+    </div>
+  </header>
+
+  <main>
+    <h2>Meu Futuro</h2>
+    <p>
+      Penso no futuro com otimismo e foco. Busco sempre aprender e me desenvolver para conquistar estabilidade, 
+      realização profissional e pessoal. Desejo trilhar um caminho onde possa ajudar outras pessoas e deixar um legado positivo.
+    </p>
+    <button class="home-btn" onclick="window.location.href='index.html'">Voltar à Página Inicial</button>
+  </main>
+
+  <footer>
+    © 2025 Paulo - Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigos - Paulo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="left-header">
+      <a href="familia.html" class="nav-link">Família</a>
+      <a href="meu-futuro.html" class="nav-link">Meu Futuro</a>
+      <a href="amigos.html" class="nav-link">Amigos</a>
+    </nav>
+
+    <div class="right-header">
+      <button id="modo-btn">🌙</button>
+      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+    </div>
+  </header>
+
+  <main>
+    <h2>Amigos</h2>
+    <p>
+      Meus amigos tornam a jornada da vida muito mais divertida. São companheiros de risadas, conquistas e aprendizados. 
+      Acredito que boas amizades são aquelas que permanecem mesmo com o tempo e a distância, sempre prontas para apoiar e celebrar juntos.
+    </p>
+    <button class="home-btn" onclick="window.location.href='index.html'">Voltar à Página Inicial</button>
+  </main>
+
   <footer>
     © 2025 Paulo - Todos os direitos reservados.
   </footer>
