@@ -4,104 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Site Funcional</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #fff;
-    color: #000;
-    transition: background-color 0.3s, color 0.3s;
-  }
-
-  /* Botão de tema */
-  .theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-  }
-
-  /* Seções */
-  .content-section {
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  /* Tópicos */
-  .topics {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .topic {
-    cursor: pointer;
-  }
-
-  .topic img {
-    width: 250px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-
-  .topic img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Botão voltar */
-  .back-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-  }
-
-  /* Modal */
-  #imageModal {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  #imageModal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-  }
-
-  /* Modo escuro */
-  .dark-mode {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-  }
-
-  .dark-mode .theme-toggle {
-    background-color: #f39c12;
-    color: #2c3e50;
-  }
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -156,42 +59,6 @@
   <img id="modalImg" src="" alt="Imagem Ampliada">
 </div>
 
-<script>
-  // Alterna tema
-  function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    const btn = document.querySelector('.theme-toggle');
-    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Modo Claro' : '🌙 Modo Escuro';
-  }
-
-  // Mostrar seção
-  function showSection(id) {
-    document.getElementById('home').classList.add('hidden');
-    ['familia', 'futuro', 'amigos'].forEach(section => {
-      document.getElementById(section).classList.add('hidden');
-    });
-    document.getElementById(id).classList.remove('hidden');
-  }
-
-  function showHome() {
-    document.getElementById('home').classList.remove('hidden');
-    ['familia', 'futuro', 'amigos'].forEach(section => {
-      document.getElementById(section).classList.add('hidden');
-    });
-  }
-
-  // Modal de imagem
-  function openModal(src) {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImg');
-    modalImg.src = src;
-    modal.style.display = 'flex';
-  }
-
-  function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
