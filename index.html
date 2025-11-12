@@ -1,41 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo - Site Pessoal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <header id="header">
-        <div class="header-content">
-            <nav id="nav">
-                <a href="#home" onclick="showPage('home'); return false;">Início</a> <a href="#familia" onclick="showPage('familia'); return false;">Família</a>
-                <a href="#meu-futuro" onclick="showPage('meu-futuro'); return false;">Meu Futuro</a>
-                <a href="#amigos" onclick="showPage('amigos'); return false;">Amigos</a>
-            </nav>
+    <header>
+        <div class="left-header">
+            <button id="modo-btn">🌙</button>
+            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+        </div>
 
-            <div class="header-right-group">
-                <div class="theme-switch-container">
-                    <label class="switch">
-                        <input type="checkbox" id="darkModeToggle" aria-label="Alternar modo escuro e claro">
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                
-                <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
-                     alt="Foto de perfil de Paulo. Clique para ampliar."
-                     class="header-image"
-                     id="profileImage">
-            </div>
-            
-            </div>
+        <nav class="right-header">
+            <a href="#familia">Família</a>
+            <a href="#meu-futuro">Meu Futuro</a>
+            <a href="#amigos">Amigos</a>
+        </nav>
     </header>
 
-    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
-        <h2 id="modalHeading" class="sr-only">Imagem Ampliada</h2> 
-        <button class="close" id="closeModal" aria-label="Fechar imagem ampliada">&times;</button>
-        <img class="modal-content" id="expandedImg" alt="Imagem ampliada do perfil de Paulo">
-    </div>
-<footer>
-        <p>© 2025 Paulo - Todos os direitos reservados</p>
+    <main>
+        <section class="intro">
+            <h1>Paulo</h1>
+            <div class="linha"></div>
+            <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
+            <p class="descricao">Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.</p>
+            <button id="home-btn">Voltar à Página Inicial</button>
+        </section>
+
+        <section id="familia">
+            <h2>Família</h2>
+            <p>Minha família é minha base. Eles me apoiam em tudo e são minha maior inspiração.</p>
+        </section>
+
+        <section id="meu-futuro">
+            <h2>Meu Futuro</h2>
+            <p>Meu objetivo é continuar crescendo pessoal e profissionalmente, alcançando meus sonhos com esforço e dedicação.</p>
+        </section>
+
+        <section id="amigos">
+            <h2>Amigos</h2>
+            <p>Meus amigos tornam a vida mais divertida e leve. São eles que estão comigo em todos os momentos.</p>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 Paulo - Todos os direitos reservados.
     </footer>
 
     <script src="script.js"></script>
-</body>
-</html>
-    <script src="script.js"></script> 
 </body>
 </html>
