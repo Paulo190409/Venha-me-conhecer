@@ -1,149 +1,160 @@
-/* Geral */
+/* ======= ESTILO GERAL ======= */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #052f61, #0a4a84);
-    color: white;
-    transition: background 0.5s, color 0.5s;
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #042a52, #083a6d);
+  color: white;
+  transition: background 0.5s, color 0.5s;
+  scroll-behavior: smooth;
 }
 
-/* Cabeçalho */
+/* ======= CABEÇALHO ======= */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #0b2343; /* Azul mais escuro no topo */
 }
 
-/* Navegação (esquerda) */
+/* Links do menu */
 .left-header a {
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.2s;
 }
 
 .left-header a:hover {
-    color: #cde6ff;
+  transform: scale(1.1);
 }
 
-/* Direita: botão e foto */
+.left-header a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #1a8cff;
+  transition: width 0.3s;
+}
+
+.left-header a:hover::after {
+  width: 100%;
+}
+
+/* Direita */
 .right-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #modo-btn {
-    background: none;
-    border: 2px solid white;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 5px 8px;
-    transition: background 0.3s, color 0.3s;
+  background: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 8px;
+  transition: background 0.3s, color 0.3s;
 }
 
 #modo-btn:hover {
-    background: white;
-    color: #0a4a84;
+  background: white;
+  color: #0a4a84;
 }
 
 #foto {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 #foto:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Introdução */
-.intro {
-    text-align: center;
-    margin-top: 80px;
+/* ======= CONTEÚDO ======= */
+main {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.intro h1 {
-    font-size: 60px;
-    color: white;
-    margin-bottom: 10px;
+section {
+  margin-bottom: 80px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 36px;
+  color: #ffffff;
 }
 
 .linha {
-    width: 120px;
-    height: 4px;
-    background: #0070cc;
-    margin: 0 auto 15px auto;
-    border-radius: 3px;
+  width: 120px;
+  height: 4px;
+  background: #0070cc;
+  margin: 0 auto 15px auto;
+  border-radius: 3px;
 }
 
 .caracteristicas {
-    font-size: 20px;
-    font-style: italic;
+  font-size: 20px;
+  font-style: italic;
 }
 
-.descricao {
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 18px;
+.descricao, p {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-/* Seções */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
+/* ======= BOTÕES ======= */
 .home-btn {
-    margin-top: 25px;
-    padding: 10px 20px;
-    border: none;
-    background: white;
-    color: #0059b3;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+  margin-top: 25px;
+  padding: 10px 20px;
+  border: none;
+  background: white;
+  color: #0059b3;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 }
 
 .home-btn:hover {
-    background: #0059b3;
-    color: white;
+  background: #0059b3;
+  color: white;
 }
 
-/* Rodapé */
+/* ======= RODAPÉ ======= */
 footer {
-    text-align: center;
-    padding: 10px;
-    background: white;
-    color: white;
-    font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  color: #004080; /* Azul no modo claro */
+  font-size: 14px;
 }
 
-/* Modo escuro */
+/* ======= MODO ESCURO ======= */
 .dark-mode {
-    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
-    color: #f5f5f5;
-}
-
-.dark-mode #modo-btn {
-    border-color: #f5f5f5;
-    color: #f5f5f5;
-}
-
-.dark-mode #modo-btn:hover {
-    background: #f5f5f5;
-    color: #1e1e1e;
+  background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+  color: #f5f5f5;
 }
 
 .dark-mode footer {
-    background: #1e1e1e;
-    color: #f5f5f5;
+  background: #1e1e1e;
+  color: white;
 }

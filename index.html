@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paulo - Site Pessoal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paulo - Site Pessoal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Navegação à esquerda -->
-        <nav class="left-header">
-            <a href="#familia">Família</a>
-            <a href="#meu-futuro">Meu Futuro</a>
-            <a href="#amigos">Amigos</a>
-        </nav>
+  <!-- ======= CABEÇALHO ======= -->
+  <header>
+    <nav class="left-header">
+      <a href="#familia" class="nav-link">Família</a>
+      <a href="#meu-futuro" class="nav-link">Meu Futuro</a>
+      <a href="#amigos" class="nav-link">Amigos</a>
+    </nav>
 
-        <!-- Botão de modo escuro e foto à direita -->
-        <div class="right-header">
-            <button id="modo-btn">🌙</button>
-            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
-        </div>
-    </header>
+    <div class="right-header">
+      <button id="modo-btn">🌙</button>
+      <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto de Paulo" id="foto">
+    </div>
+  </header>
 
-    <main>
-        <!-- Página inicial -->
-        <section class="intro" id="inicio">
-            <h1>Paulo</h1>
-            <div class="linha"></div>
-            <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
-            <p class="descricao">
-                Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. 
-                Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente.
-            </p>
-        </section>
+  <!-- ======= CONTEÚDO ======= -->
+  <main>
+    <!-- INÍCIO -->
+    <section class="intro" id="inicio">
+      <h1>Paulo</h1>
+      <div class="linha"></div>
+      <p class="caracteristicas">Dinâmico, Alegre, Esforçado</p>
+      <p class="descricao">
+        Sou uma pessoa determinada, sempre buscando melhorar e aprender mais. 
+        Gosto de desafios e valorizo muito minha família e meus amigos, que me motivam a seguir em frente. 
+        Acredito que com esforço e otimismo posso conquistar todos os meus objetivos.
+      </p>
+    </section>
 
-        <!-- Seções -->
-        <section id="familia">
-            <h2>Família</h2>
-            <p>Minha família é minha base. Eles me apoiam em tudo e são minha maior inspiração.</p>
-            <button class="home-btn">Voltar à Página Inicial</button>
-        </section>
+    <!-- FAMÍLIA -->
+    <section id="familia">
+      <h2>Família</h2>
+      <p>
+        Minha família é o alicerce da minha vida. São eles que me ensinam todos os dias o verdadeiro valor do amor, do respeito e da união.  
+        Cada momento juntos é um aprendizado e uma força para continuar buscando o melhor de mim mesmo.  
+        Eles são o meu maior apoio e a razão pela qual continuo me esforçando sempre.
+      </p>
+      <button class="home-btn" onclick="scrollToTop()">Voltar à Página Inicial</button>
+    </section>
 
-        <section id="meu-futuro">
-            <h2>Meu Futuro</h2>
-            <p>Meu objetivo é continuar crescendo pessoal e profissionalmente, alcançando meus sonhos com esforço e dedicação.</p>
-            <button class="home-btn">Voltar à Página Inicial</button>
-        </section>
+    <!-- MEU FUTURO -->
+    <section id="meu-futuro">
+      <h2>Meu Futuro</h2>
+      <p>
+        Encaro o futuro com esperança e vontade de crescer. Desejo continuar estudando, trabalhando e evoluindo em todos os aspectos da vida.  
+        Busco estabilidade, conhecimento e felicidade, mas acima de tudo, quero me tornar alguém que inspire e ajude outras pessoas a conquistarem seus sonhos.
+      </p>
+      <button class="home-btn" onclick="scrollToTop()">Voltar à Página Inicial</button>
+    </section>
 
-        <section id="amigos">
-            <h2>Amigos</h2>
-            <p>Meus amigos tornam a vida mais divertida e leve. São eles que estão comigo em todos os momentos.</p>
-            <button class="home-btn">Voltar à Página Inicial</button>
-        </section>
-    </main>
+    <!-- AMIGOS -->
+    <section id="amigos">
+      <h2>Amigos</h2>
+      <p>
+        Meus amigos são parte essencial da minha jornada. São eles que tornam a vida mais leve, divertida e cheia de boas lembranças.  
+        Acredito que as verdadeiras amizades são aquelas que resistem ao tempo, permanecendo firmes mesmo nas adversidades.
+      </p>
+      <button class="home-btn" onclick="scrollToTop()">Voltar à Página Inicial</button>
+    </section>
+  </main>
 
-    <footer>
-        © 2025 Paulo - Todos os direitos reservados.
-    </footer>
+  <!-- ======= RODAPÉ ======= -->
+  <footer>
+    © 2025 Paulo - Todos os direitos reservados.
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
