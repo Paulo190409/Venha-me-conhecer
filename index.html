@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paulo - Site Pessoal</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="style.css">
 
     <script src="/_sdk/element_sdk.js"></script>
@@ -17,10 +15,8 @@
   </head>
 
   <body class="h-full bg-blue-50 text-gray-800 transition-colors duration-300">
-    <!-- Cabeçalho -->
     <header class="bg-blue-600 shadow-lg">
       <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Navegação -->
         <nav class="flex space-x-4">
           <button onclick="showSection('home')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Início</button>
           <button onclick="showSection('futuro')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Meu Futuro</button>
@@ -28,12 +24,12 @@
           <button onclick="showSection('amigos')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Amigos</button>
         </nav>
 
-        <!-- Foto + Tema -->
         <div class="flex items-center space-x-4">
           <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
-               alt="Foto do Paulo"
-               class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover"
-               onerror="this.src=''; this.alt='Foto não encontrada'; this.style.display='none';">
+              alt="Foto do Paulo"
+              class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover cursor-pointer"
+              onclick="showZoomImage('130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg')"
+              onerror="this.src=''; this.alt='Foto não encontrada'; this.style.display='none';">
           <button onclick="toggleTheme()" class="theme-toggle bg-blue-500 hover:bg-blue-400 text-white p-3 rounded-full">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path class="sun-icon" d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z" />
@@ -44,9 +40,7 @@
       </div>
     </header>
 
-    <!-- Conteúdo -->
     <main class="flex-1 min-h-full">
-      <!-- Início -->
       <section id="home" class="section-content active">
         <div class="max-w-4xl mx-auto px-4 py-16 text-center">
           <h1 id="nome-principal" class="text-6xl font-bold text-blue-600 mb-4">Paulo</h1>
@@ -63,7 +57,6 @@
         </div>
       </section>
 
-      <!-- Futuro -->
       <section id="futuro" class="section-content">
         <div class="max-w-4xl mx-auto px-4 py-16">
           <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
@@ -75,7 +68,6 @@
         </div>
       </section>
 
-      <!-- Família -->
       <section id="familia" class="section-content">
         <div class="max-w-4xl mx-auto px-4 py-16">
           <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
@@ -87,7 +79,6 @@
         </div>
       </section>
 
-      <!-- Amigos -->
       <section id="amigos" class="section-content">
         <div class="max-w-4xl mx-auto px-4 py-16">
           <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
@@ -100,14 +91,17 @@
       </section>
     </main>
 
-    <!-- Rodapé -->
     <footer class="bg-white py-4 shadow-lg mt-auto">
       <div class="max-w-7xl mx-auto px-4 text-center">
         <p class="text-gray-600 text-sm">© 2024 Paulo - Site Pessoal</p>
       </div>
     </footer>
 
-    <!-- Script principal -->
+    <div id="image-modal" class="modal">
+      <span class="close-button" onclick="closeZoomImage()">&times;</span>
+      <img class="modal-content" id="zoomed-image" src="">
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

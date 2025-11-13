@@ -8,6 +8,8 @@ const defaultConfig = {
   amigos_texto: "Meus amigos são pessoas especiais que escolhi para fazer parte da minha jornada."
 };
 
+// --- Funções de Navegação e Tema ---
+
 // Alternar tema claro/escuro
 function toggleTheme() {
   document.documentElement.classList.toggle('dark');
@@ -30,6 +32,36 @@ function showSection(sectionName) {
   document.getElementById(sectionName).classList.add('active');
 }
 
+// --- Funções de Zoom da Imagem ---
+
+// Abrir o modal de zoom
+function showZoomImage(imageSrc) {
+  const modal = document.getElementById('image-modal');
+  const zoomedImage = document.getElementById('zoomed-image');
+
+  zoomedImage.src = imageSrc;
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Desativa o scroll do body
+}
+
+// Fechar o modal de zoom
+function closeZoomImage() {
+  const modal = document.getElementById('image-modal');
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Reativa o scroll do body
+}
+
+// Fechar o modal se clicar fora da imagem
+document.getElementById('image-modal').addEventListener('click', function(event) {
+    // Verifica se o clique foi no fundo do modal, mas não na imagem
+    if (event.target === this) {
+        closeZoomImage();
+    }
+});
+
+
+// --- Funções de Atualização de Conteúdo (SDK) ---
+
 // Atualizar conteúdo dinamicamente
 async function onConfigChange(config) {
   document.getElementById('nome-principal').textContent =
@@ -38,7 +70,10 @@ async function onConfigChange(config) {
   const qualidadesElement = document.getElementById('qualidades');
   if (config.qualidades) {
     const qualidadesArray = config.qualidades.split(',').map(q => q.trim());
-    qualidadesElement.innerHTML = qualidadesArray.join(' <span>•</span> ');
+    qualidadesElement.innerHTML = qualidadesArray.map(q => `<span>${q}</span>`).join(' <span>•</span> ');
+  } else {
+    const defaultQualidadesArray = defaultConfig.qualidades.split(',').map(q => q.trim());
+    qualidadesElement.innerHTML = defaultQualidadesArray.map(q => `<span>${q}</span>`).join(' <span>•</span> ');
   }
 
   document.getElementById('apresentacao').textContent =
