@@ -1,128 +1,58 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+body {
+  box-sizing: border-box;
 }
 
-/* CORES */
-:root {
-    --blue-header: #1E3A8A;
-    --blue-main: #3B82F6;
-    --white: #ffffff;
-    --black: #000000;
+.section-content {
+  display: none;
 }
 
-/* MODO ESCURO */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+.section-content.active {
+  display: block;
 }
 
-/* CABEÇALHO */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--blue-header);
-    padding: 20px 40px;
+/* Tema escuro */
+.dark .bg-blue-50 {
+  background-color: #1e293b !important;
 }
 
-/* MENU ESQUERDO */
-.menu {
-    display: flex;
-    gap: 20px;
+.dark .bg-blue-100 {
+  background-color: #334155 !important;
 }
 
-.menu a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: transform 0.2s, background-color 0.2s;
+.dark .text-gray-800 {
+  color: #e2e8f0 !important;
 }
 
-.menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+.dark .text-gray-600 {
+  color: #cbd5e1 !important;
 }
 
-/* MENU DIREITO */
-.right-menu {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.dark .text-blue-800 {
+  color: #93c5fd !important;
 }
 
-.dark-toggle {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: var(--white);
-    color: var(--blue-header);
-    font-weight: bold;
-    transition: transform 0.2s;
+/* Nome */
+.name-underline {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  margin: 0 auto;
 }
 
-.dark-toggle:hover {
-    transform: scale(1.1);
+/* Botões */
+.nav-button {
+  transition: all 0.3s ease;
 }
 
-.profile-pic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s;
+.nav-button:hover {
+  transform: translateY(-2px);
 }
 
-.profile-pic.enlarged {
-    transform: scale(2);
+/* Alternar tema */
+.theme-toggle {
+  transition: all 0.3s ease;
 }
 
-/* CORPO */
-main {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: var(--blue-main);
-    color: var(--white);
-}
-
-main h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-main hr {
-    width: 80px;
-    border: 2px solid var(--white);
-    margin: 20px auto;
-}
-
-.descriptions {
-    margin-top: 20px;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.bio {
-    margin-top: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 18px;
-}
-
-/* RODAPÉ */
-footer {
-    background-color: var(--white);
-    color: var(--black);
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
+.theme-toggle:hover {
+  transform: rotate(180deg);
 }
