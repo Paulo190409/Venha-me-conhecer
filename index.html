@@ -10,14 +10,14 @@
 
     <!-- Foto + Tema -->
     <div class="flex items-center space-x-4">
-      <!-- FOTO DE PERFIL -->
-      <img
+      <!-- FOTO -->
+      <img 
         id="foto-perfil"
-        src="minha-foto.jpg"
+        src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
         alt="Foto do Paulo"
-        class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
-        onclick="ampliarFoto(this)"
-        onerror="this.src=''; this.alt='Foto não encontrada'; this.style.display='none';"
+        class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-110"
+        onclick="abrirFoto()"
+        onerror="this.alt='Foto não encontrada'; this.style.display='none';"
       >
 
       <!-- BOTÃO DE TEMA -->
@@ -31,7 +31,20 @@
   </div>
 </header>
 
-<!-- Modal da foto -->
-<div id="modal-foto" class="modal-foto hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-  <img id="foto-ampliada" src="" alt="Foto Ampliada" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl">
+<!-- Modal da Foto Ampliada -->
+<div id="modal-foto" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+  <div class="relative">
+    <img 
+      id="foto-ampliada" 
+      src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" 
+      alt="Foto Ampliada" 
+      class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl transition-transform duration-300 transform scale-95"
+    >
+    <button 
+      onclick="fecharFoto()" 
+      class="absolute top-2 right-2 bg-white bg-opacity-80 text-black rounded-full px-3 py-1 font-bold hover:bg-opacity-100 transition"
+    >
+      ✕
+    </button>
+  </div>
 </div>

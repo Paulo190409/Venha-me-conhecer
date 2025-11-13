@@ -1,19 +1,15 @@
-/* Modal de foto ampliada */
-.modal-foto {
-  transition: opacity 0.3s ease;
-}
-
-.modal-foto img {
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.modal-foto.show img {
-  transform: scale(1);
-  animation: aparecer 0.3s ease forwards;
+/* Efeito de aparição da foto ampliada */
+#modal-foto {
+  animation: aparecer 0.25s ease;
 }
 
 @keyframes aparecer {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -1,17 +1,20 @@
-// Função para ampliar a foto
-function ampliarFoto(img) {
+// Abre o modal da foto
+function abrirFoto() {
   const modal = document.getElementById('modal-foto');
-  const fotoAmpliada = document.getElementById('foto-ampliada');
-  fotoAmpliada.src = img.src;
   modal.classList.remove('hidden');
-  setTimeout(() => modal.classList.add('show'), 10); // animação suave
 
-  // Fechar modal ao clicar fora da imagem
-  modal.addEventListener('click', function fechar(e) {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-      setTimeout(() => modal.classList.add('hidden'), 200);
-      modal.removeEventListener('click', fechar);
-    }
-  });
+  // adiciona uma animação suave de zoom na imagem
+  const img = document.getElementById('foto-ampliada');
+  img.style.transform = 'scale(1)';
 }
+
+// Fecha o modal da foto
+function fecharFoto() {
+  const modal = document.getElementById('modal-foto');
+  modal.classList.add('hidden');
+}
+
+// Fecha clicando fora da imagem
+document.getElementById('modal-foto').addEventListener('click', (e) => {
+  if (e.target.id === 'modal-foto') fecharFoto();
+});
