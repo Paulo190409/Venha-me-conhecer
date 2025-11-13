@@ -1,64 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Site Funcional</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Paulo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- CABEÇALHO -->
+    <header>
+        <nav class="menu">
+            <a href="meu-futuro.html">Meu Futuro</a>
+            <a href="amigos.html">Amigos</a>
+            <a href="familia.html">Família</a>
+        </nav>
+        <div class="right-menu">
+            <button class="dark-toggle">🌙</button>
+            <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg" alt="Foto" class="profile-pic">
+        </div>
+    </header>
 
-<!-- Botão Modo Escuro/Claro -->
-<button class="theme-toggle" onclick="toggleTheme()">🌙 Modo Escuro</button>
+    <!-- CORPO -->
+    <main>
+        <h1>Paulo</h1>
+        <hr>
+        <div class="descriptions">
+            <span>dinâmico</span>
+            <span>alegre</span>
+            <span>esforçado</span>
+        </div>
+        <div class="bio">
+            Olá! Eu sou o Paulo, uma pessoa apaixonada por desafios, que valoriza a família, os amigos e está sempre em busca de crescimento pessoal e profissional.
+        </div>
+    </main>
 
-<!-- Página Inicial -->
-<div id="home" class="content-section">
-  <h1>Bem-vindo!</h1>
-  <p>Clique em um tópico abaixo:</p>
+    <!-- RODAPÉ -->
+    <footer>
+        &copy; 2025 Paulo
+    </footer>
 
-  <div class="topics">
-    <div class="topic" onclick="showSection('familia')">
-      <h2>Família</h2>
-      <img src="https://via.placeholder.com/250x150?text=Família" alt="Família">
-    </div>
-    <div class="topic" onclick="showSection('futuro')">
-      <h2>Futuro</h2>
-      <img src="https://via.placeholder.com/250x150?text=Futuro" alt="Futuro">
-    </div>
-    <div class="topic" onclick="showSection('amigos')">
-      <h2>Amigos</h2>
-      <img src="https://via.placeholder.com/250x150?text=Amigos" alt="Amigos">
-    </div>
-  </div>
-</div>
-
-<!-- Seções -->
-<div id="familia" class="content-section hidden">
-  <h2>Família</h2>
-  <img src="https://via.placeholder.com/500x300?text=Família" alt="Família" onclick="openModal(this.src)">
-  <p>Informações sobre família.</p>
-  <button class="back-button" onclick="showHome()">Voltar</button>
-</div>
-
-<div id="futuro" class="content-section hidden">
-  <h2>Futuro</h2>
-  <img src="https://via.placeholder.com/500x300?text=Futuro" alt="Futuro" onclick="openModal(this.src)">
-  <p>Informações sobre futuro.</p>
-  <button class="back-button" onclick="showHome()">Voltar</button>
-</div>
-
-<div id="amigos" class="content-section hidden">
-  <h2>Amigos</h2>
-  <img src="https://via.placeholder.com/500x300?text=Amigos" alt="Amigos" onclick="openModal(this.src)">
-  <p>Informações sobre amigos.</p>
-  <button class="back-button" onclick="showHome()">Voltar</button>
-</div>
-
-<!-- Modal -->
-<div id="imageModal" onclick="closeModal()">
-  <img id="modalImg" src="" alt="Imagem Ampliada">
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
