@@ -1,113 +1,37 @@
-<!doctype html>
-<html lang="pt-BR" class="h-full">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paulo - Site Pessoal</title>
+<header class="bg-blue-600 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Navegação -->
+    <nav class="flex space-x-4">
+      <button onclick="showSection('home')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Início</button>
+      <button onclick="showSection('futuro')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Meu Futuro</button>
+      <button onclick="showSection('familia')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Família</button>
+      <button onclick="showSection('amigos')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Amigos</button>
+    </nav>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Foto + Tema -->
+    <div class="flex items-center space-x-4">
+      <!-- FOTO DE PERFIL -->
+      <img
+        id="foto-perfil"
+        src="minha-foto.jpg"
+        alt="Foto do Paulo"
+        class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+        onclick="ampliarFoto(this)"
+        onerror="this.src=''; this.alt='Foto não encontrada'; this.style.display='none';"
+      >
 
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="style.css">
+      <!-- BOTÃO DE TEMA -->
+      <button onclick="toggleTheme()" class="theme-toggle bg-blue-500 hover:bg-blue-400 text-white p-3 rounded-full">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path class="sun-icon" d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z" />
+          <path class="moon-icon hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <script src="/_sdk/element_sdk.js"></script>
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-    <style>@view-transition { navigation: auto; }</style>
-  </head>
-
-  <body class="h-full bg-blue-50 text-gray-800 transition-colors duration-300">
-    <!-- Cabeçalho -->
-    <header class="bg-blue-600 shadow-lg">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Navegação -->
-        <nav class="flex space-x-4">
-          <button onclick="showSection('home')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Início</button>
-          <button onclick="showSection('futuro')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Meu Futuro</button>
-          <button onclick="showSection('familia')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Família</button>
-          <button onclick="showSection('amigos')" class="nav-button bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-lg font-medium">Amigos</button>
-        </nav>
-
-        <!-- Foto + Tema -->
-        <div class="flex items-center space-x-4">
-          <img src="130b3105-a8da-4d33-9dc1-4bb59f0ce7ac.jpg"
-               alt="Foto do Paulo"
-               class="w-12 h-12 rounded-full border-2 border-blue-300 shadow-lg object-cover"
-               onerror="this.src=''; this.alt='Foto não encontrada'; this.style.display='none';">
-          <button onclick="toggleTheme()" class="theme-toggle bg-blue-500 hover:bg-blue-400 text-white p-3 rounded-full">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path class="sun-icon" d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z" />
-              <path class="moon-icon hidden" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Conteúdo -->
-    <main class="flex-1 min-h-full">
-      <!-- Início -->
-      <section id="home" class="section-content active">
-        <div class="max-w-4xl mx-auto px-4 py-16 text-center">
-          <h1 id="nome-principal" class="text-6xl font-bold text-blue-600 mb-4">Paulo</h1>
-          <div class="name-underline mb-8"></div>
-          <div id="qualidades" class="text-2xl text-blue-800 font-medium mb-16 space-x-4">
-            <span>dinâmico</span> <span>•</span> <span>alegre</span> <span>•</span> <span>esforçado</span>
-          </div>
-          <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">Sobre Mim</h2>
-            <p id="apresentacao" class="text-gray-700 leading-relaxed text-lg">
-              Olá! Sou uma pessoa dinâmica e alegre, sempre em busca de novos desafios e oportunidades de crescimento.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Futuro -->
-      <section id="futuro" class="section-content">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-          <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
-            <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Meu Futuro</h2>
-            <p id="futuro-texto" class="text-gray-700 leading-relaxed text-lg">
-              Tenho grandes planos para o futuro! Quero continuar crescendo profissionalmente e contribuindo para a sociedade.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Família -->
-      <section id="familia" class="section-content">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-          <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
-            <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Família</h2>
-            <p id="familia-texto" class="text-gray-700 leading-relaxed text-lg">
-              Minha família é minha base e minha maior fonte de inspiração.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Amigos -->
-      <section id="amigos" class="section-content">
-        <div class="max-w-4xl mx-auto px-4 py-16">
-          <div class="bg-white bg-opacity-90 rounded-xl p-8 shadow-lg">
-            <h2 class="text-4xl font-bold text-blue-800 mb-8 text-center">Amigos</h2>
-            <p id="amigos-texto" class="text-gray-700 leading-relaxed text-lg">
-              Meus amigos são pessoas especiais que escolhi para fazer parte da minha jornada.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="bg-white py-4 shadow-lg mt-auto">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-gray-600 text-sm">© 2024 Paulo - Site Pessoal</p>
-      </div>
-    </footer>
-
-    <!-- Script principal -->
-    <script src="script.js"></script>
-  </body>
-</html>
+<!-- Modal da foto -->
+<div id="modal-foto" class="modal-foto hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+  <img id="foto-ampliada" src="" alt="Foto Ampliada" class="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl">
+</div>
